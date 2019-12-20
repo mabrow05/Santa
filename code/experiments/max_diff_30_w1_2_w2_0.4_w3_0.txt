@@ -1,0 +1,8 @@
+max_diff: 30
+w1: 2
+w2: 0.4
+w3: 0
+status: Optimal
+Accounting Penalty: 4971.985938653768
+Simple Cost: 79288
+Final Score: 84259.98593865377

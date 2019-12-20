@@ -1,0 +1,1 @@
+Baseline with no accounting penalty: cost = 43502
