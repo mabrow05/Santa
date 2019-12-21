@@ -15,6 +15,21 @@ from mip.model import *
 
 df = pd.read_csv('../data/family_data.csv',index_col=0)
 
+# Loading a feasible solution from another pass at solving the
+# problem
+
+#init_sol_file = 'submission_data/submission_exp_max_diff_30_w1_0_w2_0.4_w3_10.csv'
+#init_sol = pd.read_csv(init_sol_file,index_col=0)
+
+
+
+#init_sol_dict = {}
+
+#for i,k in enumerate(init_sol):
+#    days_list = [0 for i in range(100)]
+#    days_list[k-1] = 1
+#    init_sol_dict[i] = days_list
+
 #df2.head()
 
 
@@ -36,9 +51,9 @@ df = pd.read_csv('../data/family_data.csv',index_col=0)
 
 
 # for testing
-num_days=100
-num_families = 5000
-num_seconds = 60*60*8
+num_days=20
+num_families = 100
+num_seconds = 300
 
 df2 = df[:num_families].copy()
 
@@ -72,6 +87,7 @@ if num_days!=100:
         df2[c] = np.random.randint(1,num_days+1,num_families)
 
 
+init_sol = df2['choice_0']
 # In[11]:
 
 
@@ -336,7 +352,8 @@ m += ppd(day[-1]) == xsum(y[-1][ndi][nd1i]*nd1 for nd1i,nd1 in enumerate(npd) fo
 
 
 # In[ ]:
-
+m.start = [(x[fi][init_sol[fi]-1], 1.0) for fi,f in enumerate(fam_id)]
+m.threads = -1
 
 #m.max_gap = 0.05
 print('Solving.....')
