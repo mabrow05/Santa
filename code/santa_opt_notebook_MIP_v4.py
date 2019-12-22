@@ -18,9 +18,6 @@ df = pd.read_csv('../data/family_data.csv',index_col=0)
 # Loading a feasible solution from another pass at solving the
 # problem
 
-#init_sol_file = 'submission_data/submission_exp_max_diff_30_w1_0_w2_0.4_w3_10.csv'
-#init_sol = pd.read_csv(init_sol_file,index_col=0)
-
 
 
 #init_sol_dict = {}
@@ -51,9 +48,9 @@ df = pd.read_csv('../data/family_data.csv',index_col=0)
 
 
 # for testing
-num_days=20
-num_families = 100
-num_seconds = 300
+num_days=100
+num_families = 5000
+num_seconds = 60*60*4
 
 df2 = df[:num_families].copy()
 
@@ -87,7 +84,12 @@ if num_days!=100:
         df2[c] = np.random.randint(1,num_days+1,num_families)
 
 
-init_sol = df2['choice_0']
+
+init_sol_file = 'submission_data/submission_exp_max_diff_30_w1_0_w2_0.4_w3_10.csv'
+init_sol = pd.read_csv(init_sol_file,index_col=0)
+
+init_sol = init_sol['assigned_day']#df2['choice_0']
+
 # In[11]:
 
 
