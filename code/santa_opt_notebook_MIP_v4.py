@@ -50,7 +50,7 @@ df = pd.read_csv('../data/family_data.csv',index_col=0)
 # for testing
 num_days=100
 num_families = 5000
-num_seconds = 60*60*4
+num_seconds = 60*60*24
 
 df2 = df[:num_families].copy()
 
@@ -355,7 +355,7 @@ m += ppd(day[-1]) == xsum(y[-1][ndi][nd1i]*nd1 for nd1i,nd1 in enumerate(npd) fo
 
 # In[ ]:
 m.start = [(x[fi][init_sol[fi]-1], 1.0) for fi,f in enumerate(fam_id)]
-m.threads = -1
+#m.threads = 4
 
 #m.max_gap = 0.05
 print('Solving.....')
