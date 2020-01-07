@@ -1,0 +1,136 @@
+Using Python-MIP package version 1.6.4
+300
+125
+1.0
+1.0
+          choice_0     choice_1  ...     choice_9    n_people
+count  5000.000000  5000.000000  ...  5000.000000  5000.00000
+mean     40.715000    41.601000  ...    42.608200     4.20060
+std      29.054208    29.518375  ...    28.116088     1.53272
+min       1.000000     1.000000  ...     1.000000     2.00000
+25%      16.000000    16.000000  ...    19.000000     3.00000
+50%      38.000000    38.000000  ...    39.000000     4.00000
+75%      62.000000    66.000000  ...    66.000000     5.00000
+max     100.000000   100.000000  ...   100.000000     8.00000
+
+[8 rows x 11 columns]
+Through loading data and setting up parameters.
+
+Creating Choice Matrix...
+0/5000
+1000/5000
+2000/5000
+3000/5000
+4000/5000
+Creating Choice penalty mappers...
+Creating accounting penalty table...
+Creating Model...
+
+Adding family decision variables...
+Adding number of people per day decision variables...
+Creating the objective function...
+Creating constraint to ensure each family is assigned a single day...
+Creating constraint to ensure the number of people per day does not exit bounds...
+Creating constraints to make sure each day only has one entry for npd(d),npd(d+1) and
+         to make sure that the number of people matches between the two decision variables...
+Creating constraint to make sure the number of people on d+1 matches from the 
+         the first decision variable to the second decision variable...
+Solving.....
+Welcome to the CBC MILP Solver 
+Version: Trunk
+Build Date: Dec 16 2019 
+
+Starting solution of the Linear programming relaxation problem using Primal Simplex
+
+Coin0506I Presolve 5501 (0) rows, 3597600 (0) columns and 14872800 (0) elements
+Clp0030I 2 infeas 1279.9425, obj 0 - mu 1000, its 52, 17023 interior
+Clp0030I 3 infeas 1279.3253, obj 0 - mu 1000, its 52, 17074 interior
+Clp0030I 4 infeas 1155.758, obj 0 - mu 333.3, its 52, 22587 interior
+Clp0030I 5 infeas 1155.1082, obj 0 - mu 333.3, its 52, 22609 interior
+Clp0030I 6 infeas 1094.196, obj 0 - mu 111.08889, its 72, 33835 interior
+Clp0030I 7 infeas 1093.8219, obj 0 - mu 111.08889, its 52, 33876 interior
+Clp0030I 8 infeas 1041.5511, obj 0 - mu 37.025927, its 105, 77883 interior
+Clp0030I 9 infeas 1041.458, obj 0 - mu 37.025927, its 52, 77922 interior
+Clp0030I 10 infeas 1006.0377, obj 0 - mu 12.340741, its 105, 104702 interior
+Clp0030I 11 infeas 1004.5029, obj 0 - mu 12.340741, its 105, 110491 interior
+Clp0030I 12 infeas 990.265, obj 0 - mu 4.1131691, its 105, 124007 interior
+Clp0030I 13 infeas 980.11537, obj 0 - mu 1.3709193, its 105, 133530 interior
+Clp0030I 14 infeas 974.04989, obj 0 - mu 0.45692739, its 105, 133389 interior
+Clp0030I 15 infeas 928.91401, obj 913.77547 - mu 0.1522939, its 105, 126161 interior
+Clp0030I 16 infeas 927.32597, obj 916.0552 - mu 0.1522939, its 105, 122309 interior
+Clp0030I 17 infeas 727.34935, obj 7911.9467 - mu 0.050759557, its 105, 111999 interior
+Clp0030I 18 infeas 727.3012, obj 7917.5867 - mu 0.050759557, its 105, 107967 interior
+Clp0030I 19 infeas 524.19924, obj 18249.135 - mu 0.01691816, its 105, 92793 interior
+Clp0030I 20 infeas 524.85167, obj 18271.206 - mu 0.01691816, its 105, 89672 interior
+Clp0030I 21 infeas 350.82564, obj 28511.432 - mu 0.0056388228, its 105, 78368 interior
+Clp0030I 22 infeas 346.33473, obj 28558.669 - mu 0.0056388228, its 105, 71974 interior
+Clp0030I 23 infeas 213.425, obj 36421.472 - mu 0.0018794197, its 105, 64012 interior
+Clp0030I 24 infeas 83.031625, obj 44484.784 - mu 0.0018794197, its 105, 58697 interior
+Clp0030I 25 infeas 34.302771, obj 48207.848 - mu 0.0018794197, its 105, 50104 interior
+Clp0030I 26 infeas 81.314241, obj 44939.666 - mu 0.00062641057, its 105, 54341 interior
+Clp0030I 27 infeas 39.668972, obj 48430.937 - mu 0.00062641057, its 105, 46495 interior
+Clp0030I 28 infeas 19.904698, obj 50957.095 - mu 0.00062641057, its 105, 42292 interior
+Clp0030I 29 infeas 38.153153, obj 49499.255 - mu 0.00020878264, its 105, 44523 interior
+Clp0030I 30 infeas 17.508712, obj 51839.898 - mu 0.00020878264, its 105, 39592 interior
+Clp0030I 31 infeas 11.098091, obj 53885.414 - mu 0.00020878264, its 105, 37526 interior
+Clp0030I 32 infeas 17.117344, obj 53191.577 - mu 6.9587255e-05, its 105, 38382 interior
+Clp0030I 33 infeas 8.6549993, obj 54497.325 - mu 6.9587255e-05, its 105, 36234 interior
+Clp0030I 34 infeas 5.7531926, obj 55975.194 - mu 6.9587255e-05, its 105, 34308 interior
+Clp0030I 35 infeas 7.5736126, obj 55684.154 - mu 2.3193432e-05, its 105, 34324 interior
+Clp0030I 36 infeas 4.0755319, obj 56508.156 - mu 2.3193432e-05, its 105, 33218 interior
+Clp0030I 37 infeas 2.6485336, obj 57620.642 - mu 2.3193432e-05, its 105, 33780 interior
+Clp0030I 38 infeas 2.997475, obj 57469.784 - mu 7.7303709e-06, its 105, 32278 interior
+Clp0030I 39 infeas 1.4093695, obj 57784.424 - mu 7.7303709e-06, its 105, 29811 interior
+Clp0030I 40 infeas 1.0041183, obj 58219.379 - mu 7.7303709e-06, its 105, 30331 interior
+Clp0030I 41 infeas 1.2038454, obj 58179.699 - mu 2.5765326e-06, its 105, 29865 interior
+Clp0030I 42 infeas 0.65947672, obj 58302.603 - mu 2.5765326e-06, its 105, 27833 interior
+Clp0030I 43 infeas 0.30471552, obj 58530.806 - mu 2.5765326e-06, its 105, 27445 interior
+Clp0030I 44 infeas 0.47711334, obj 58512.276 - mu 8.5875832e-07, its 105, 26882 interior
+Clp0030I 45 infeas 0.28387331, obj 58556.015 - mu 8.5875832e-07, its 105, 26725 interior
+Clp0030I 46 infeas 0.15538253, obj 58631.008 - mu 8.5875832e-07, its 105, 26583 interior
+Clp0030I 47 infeas 0.24251698, obj 58640.398 - mu 2.8622415e-07, its 105, 26518 interior
+Clp0030I 48 infeas 0.13445015, obj 58683.706 - mu 2.8622415e-07, its 105, 26526 interior
+Clp0030I 49 infeas 0.10690453, obj 58743.061 - mu 2.8622415e-07, its 105, 26511 interior
+Clp0030I 50 infeas 0.17866336, obj 58769.684 - mu 9.5398509e-08, its 105, 26386 interior
+Clp0030I 51 infeas 0.18070698, obj 58885.061 - mu 9.5398509e-08, its 105, 27364 interior
+Clp0030I 52 infeas 0.14755815, obj 59053.153 - mu 9.5398509e-08, its 105, 29643 interior
+Clp0030I 53 infeas 0.24751837, obj 59362.605 - mu 3.1796323e-08, its 105, 29655 interior
+Clp0030I 54 infeas 0.2031527, obj 59728.491 - mu 3.1796323e-08, its 105, 30061 interior
+Clp0030I 55 infeas 0.19388271, obj 60005.938 - mu 3.1796323e-08, its 105, 30458 interior
+Clp0030I 56 infeas 0.17364373, obj 60372.989 - mu 1.0597714e-08, its 105, 30598 interior
+Clp0030I 57 infeas 0.12305414, obj 60950.814 - mu 1.0597714e-08, its 105, 30455 interior
+Clp0030I 58 infeas 0.15943741, obj 61975.765 - mu 1.0597714e-08, its 105, 30918 interior
+Clp0030I 59 infeas 0.21664709, obj 62915.37 - mu 3.5322182e-09, its 105, 30834 interior
+Clp0030I 60 infeas 0.1686813, obj 64449.519 - mu 3.5322182e-09, its 105, 31582 interior
+Clp1000I sum of infeasibilities 158.026 - average 0.0287267, 3566766 fixed columns
+Coin0506I Presolve 1153 (-4348) rows, 29442 (-3568158) columns and 121469 (-14751331) elements
+Clp0006I 0  Obj 62606.552 Primal inf 5.2396923 (1000) Dual inf 3.6827274e+13 (29442)
+Clp0029I End of values pass after 29442 iterations
+Clp0014I Perturbing problem by 0.001% of 2.7062806 - largest nonzero change 2.9974946e-05 ( 0.002933934%) - largest zero change 2.9900893e-05
+Clp0006I 30663  Obj 54903.533 Dual inf 807.8152 (281)
+Clp0000I Optimal - objective value 54909.12
+Clp0000I Optimal - objective value 54909.12
+Coin0511I After Postsolve, objective 54909.12, infeasibilities - dual 0 (0), primal 0 (0)
+Clp0006I 0  Obj 54909.12 Dual inf 1.4326447e+09 (91537)
+Clp0014I Perturbing problem by 0.001% of 11.214044 - largest nonzero change 0.00011259916 ( 0.0029881088%) - largest zero change 2.9967533e-05
+Clp0006I 185  Obj 54789.784 Dual inf 2.0794396e+10 (427698)
+Clp0006I 370  Obj 54776.312 Dual inf 2.5824406e+09 (201409)
+Clp0006I 555  Obj 54762.749 Dual inf 2.4883918e+08 (94873)
+Clp0006I 740  Obj 54756.55 Dual inf 5.7717424e+08 (113555)
+Clp0006I 1110  Obj 54754.649 Dual inf 22322897 (73488)
+Clp0006I 1480  Obj 54750.519 Dual inf 19142194 (72062)
+Clp0006I 2035  Obj 54705.403 Dual inf 61040193 (84027)
+Clp0006I 2220  Obj 54661.947 Dual inf 11812466 (69498)
+Clp0006I 2405  Obj 54628.577 Dual inf 275782.62 (29193)
+Clp0006I 2590  Obj 54622.153 Dual inf 126220.37 (17188)
+Clp0006I 2775  Obj 54621.083 Dual inf 9.7118084 (361)
+Clp0006I 2876  Obj 54766.591 Primal inf 0.20972876 (19) Dual inf 3.151186e+18 (2829156)
+Clp0006I 2976  Obj 54766.606 Dual inf 0.14923523 (22)
+Clp0000I Optimal - objective value 54766.606
+Clp0006I 0  Obj 54766.606
+Clp0000I Optimal - objective value 54766.606
+Clp0006I 0  Obj 54766.606
+Clp0000I Optimal - objective value 54766.606
+Clp0032I Optimal objective 54766.60637 - 0 iterations time 133.752, Idiot 129.97
+
+Starting MIP optimization
