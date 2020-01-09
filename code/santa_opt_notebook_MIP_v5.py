@@ -87,7 +87,7 @@ if num_days!=100:
 
 
 
-init_sol_file = 'submission_data/submission_exp_max_diff_30_w1_0_w2_0.4_w3_10.csv'
+init_sol_file = 'seed_62868.csv'
 init_sol = pd.read_csv(init_sol_file,index_col=0)
 
 init_sol = init_sol['assigned_day']#df2['choice_0']
@@ -279,12 +279,12 @@ def ppd(d):
 # In[ ]:
 
 print('Creating the objective function...')
-m.objective = minimize(xsum(x[fi][di]*choice_matrix[f][d][c]*(choice_gc[c] + n_people[f]*choice_pm[c])
-                       for c in choice for di,d in enumerate(day) for fi,f in enumerate(fam_id)))
-                      #+ xsum(y[di][ndi][nd1i]*acc_table[(nd,nd1)]
-                        #     for nd1i,nd1 in enumerate(npd)
-                        #     for ndi,nd in enumerate(npd)
-                        #     for di,d in enumerate(day)))
+m.objective = minimize(#xsum(x[fi][di]*choice_matrix[f][d][c]*(choice_gc[c] + n_people[f]*choice_pm[c])
+                       #for c in choice for di,d in enumerate(day) for fi,f in enumerate(fam_id)))
+                       xsum(y[di][ndi][nd1i]*acc_table[(nd,nd1)]
+                             for nd1i,nd1 in enumerate(npd)
+                             for ndi,nd in enumerate(npd)
+                             for di,d in enumerate(day)))
 
 #m.objective = minimize(xsum(x[fi][di]*choice_matrix[f][d][c]*(choice_gc[c] + n_people[f]*choice_pm[c])
 #                            + ppd_fast(di)*(w1+w2) - w1*ppd_fast(di+1) - w2*125
@@ -345,10 +345,14 @@ for di,d in enumerate(day[:-1]):
 m += ppd(day[-1]) == xsum(y[-1][ndi][nd1i]*nd1 for nd1i,nd1 in enumerate(npd) for ndi,nd in enumerate(npd))
 
 # Constraint to suppress the value of the accounting day_penalty
-m += xsum(y[di][ndi][nd1i]*acc_table[(nd,nd1)]
-       for nd1i,nd1 in enumerate(npd)
-       for ndi,nd in enumerate(npd)
-       for di,d in enumerate(day)) <= 20000
+#m += xsum(y[di][ndi][nd1i]*acc_table[(nd,nd1)]
+#       for nd1i,nd1 in enumerate(npd)
+#       for ndi,nd in enumerate(npd)
+#       for di,d in enumerate(day)) <= 20000
+
+# Constraint to set the value of the basic cost
+m += xsum(x[fi][di]*choice_matrix[f][d][c]*(choice_gc[c] + n_people[f]*choice_pm[c])
+          for c in choice for di,d in enumerate(day) for fi,f in enumerate(fam_id)) == 62868
 
 # In[29]:
 
